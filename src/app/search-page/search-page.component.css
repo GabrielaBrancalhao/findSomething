@@ -17,3 +17,10 @@ header{
     border: solid 1px lightgray;
     border-radius: 10px;
 }
+
+.closeBtn {
+    border: solid 1px lightgray;
+    border-radius: 50px;
+    width: 25px;
+    height: auto;
+}
