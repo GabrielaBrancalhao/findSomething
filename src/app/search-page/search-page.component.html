@@ -1,8 +1,8 @@
 <header>
-    <div>
+    <div  class="padd">
         <img src="http://aai-frontend-interview-mock-data.s3-website-sa-east-1.amazonaws.com/assets/favicon.png">
     </div>
-    <div class="paddLeft">
+    <div>
         <p>Teste de Desenvolvedor Front-end / Anota AI</p>
         <p class="fontSty"><i>__________ Gabriela Brancalhão __________</i></p>
     </div>
@@ -10,18 +10,17 @@
 <body>
     <div class="search">
         <div>
-            <input type="search" name="search">
-            <input type="submit" value="Submit">
+            <input class="inp1" type="search" name="search">
         </div>
     </div>
     <div class="lista">
         <div class="sizeColuna" *ngFor="let produto of produtos">
+            <div class="close">
+                <button  class="closeBtn">
+                    <img src="http://aai-frontend-interview-mock-data.s3-website-sa-east-1.amazonaws.com/assets/close.svg">
+                </button>
+            </div>
             <div class="borda">
-                    <div class="close">
-                        <button  class="closeBtn">
-                            <img src="http://aai-frontend-interview-mock-data.s3-website-sa-east-1.amazonaws.com/assets/close.svg">
-                        </button>
-                    </div>
                     <div>
                         <img class="prodImg" src="{{produto.img}}">
                     </div>

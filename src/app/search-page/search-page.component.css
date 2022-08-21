@@ -30,20 +30,22 @@ body {
 }
 
 .closeBtn {
+    box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
     border: solid 1px lightgray;
     border-radius: 60px;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     margin: 10px;
 }
 
 .title { 
-    font-size: 14px;
+    font-size: 1.2vw;
     font-weight: bolder;
 }
 
 .close { 
-    text-align: end;
+    position: absolute;
+    right: 0px;
 } 
 
 .coluna { 
@@ -52,11 +54,13 @@ body {
     padding: 5px;
 }
 
-.paddLeft {
-    padding-left: 10px;
+.padd {
+    margin: 10px;
 } 
 
 .prodImg { 
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     object-fit: cover;
     object-position: center;
     -o-object-fit: cover;
@@ -67,14 +71,31 @@ body {
 
 .descricao {
     text-align: justify;
+    font-size: 0.8vw;
 }
 
 .sizeColuna { 
     width: 80%;
+    position: relative;
 }
 
 .search {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
+
+.inp1 { 
+    border-radius: 5px;
+    height: 40px;
+    width: 60%;
+    font: 0.9vw;
+    padding-left: 10px;
+}
+
+:active.inp1 { 
+     color: blue;
+}
+
