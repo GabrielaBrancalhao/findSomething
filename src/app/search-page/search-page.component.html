@@ -2,25 +2,38 @@
     <div>
         <img src="http://aai-frontend-interview-mock-data.s3-website-sa-east-1.amazonaws.com/assets/favicon.png">
     </div>
-    <div>
+    <div class="paddLeft">
         <p>Teste de Desenvolvedor Front-end / Anota AI</p>
-        <p>Gabriela Brancalhão</p>
+        <p class="fontSty"><i>__________ Gabriela Brancalhão __________</i></p>
     </div>
 </header>
 <body>
-    <div>
-        <input type="search" id="search" name="search">
-        <input type="submit" value="Submit">
-        <button (click)="listarTodosProdutos()">GET</button>
+    <div class="search">
+        <div>
+            <input type="search" name="search">
+            <input type="submit" value="Submit">
+        </div>
     </div>
-    <div *ngFor="let produto of produtos" class="lista">
-        <div class="card borda">
-            <img class="closeBtn" src="http://aai-frontend-interview-mock-data.s3-website-sa-east-1.amazonaws.com/assets/close.svg">
-            <span>{{produto.id}}</span>
-            <span>{{produto.title}}</span>
-            <span>{{produto.description}}</span>
-            <span>{{produto.img}}</span>
-            <span>{{produto.type}}</span>
+    <div class="lista">
+        <div class="sizeColuna" *ngFor="let produto of produtos">
+            <div class="borda">
+                    <div class="close">
+                        <button  class="closeBtn">
+                            <img src="http://aai-frontend-interview-mock-data.s3-website-sa-east-1.amazonaws.com/assets/close.svg">
+                        </button>
+                    </div>
+                    <div>
+                        <img class="prodImg" src="{{produto.img}}">
+                    </div>
+                    <div class="coluna">
+                        <div>
+                            <span class="title">{{produto.title}}</span>
+                        </div>
+                        <div>
+                            <p class="descricao">{{produto.description}}</p>
+                        </div>
+                    </div>
+            </div>
         </div>
     </div>
 </body>
