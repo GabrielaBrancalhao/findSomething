@@ -8,18 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPageComponent implements OnInit {
 
-  public produtos = [];
+  public produtos:any = [];
 
   public list_produtos_url = 'http://aai-frontend-interview-mock-data.s3-website-sa-east-1.amazonaws.com/cardlist.json';
 
   constructor(public http : HttpClient) { }
 
   ngOnInit(): void {
+    this.getProdutos()
   }
 
   listarTodosProdutos() {
-    this.http.get(`${ this.list_produtos_url }`)
+    this.http.get(`${ this.list_produtos_url}`)
              .subscribe(resultado => console.log(resultado));
+  }
+
+  getProdutos() {
+    this.http.get(this.list_produtos_url).subscribe((produtos:any)=>{
+      this.produtos = produtos;
+      console.log(produtos)
+    })
   }
 
 }

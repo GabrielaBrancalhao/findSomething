@@ -13,9 +13,14 @@
         <input type="submit" value="Submit">
         <button (click)="listarTodosProdutos()">GET</button>
     </div>
-    <div class="lista">
+    <div *ngFor="let produto of produtos" class="lista">
         <div class="card borda">
             <img class="closeBtn" src="http://aai-frontend-interview-mock-data.s3-website-sa-east-1.amazonaws.com/assets/close.svg">
+            <span>{{produto.id}}</span>
+            <span>{{produto.title}}</span>
+            <span>{{produto.description}}</span>
+            <span>{{produto.img}}</span>
+            <span>{{produto.type}}</span>
         </div>
     </div>
 </body>
