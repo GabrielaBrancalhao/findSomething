@@ -11,15 +11,13 @@
     <div class="search">
         <div>
             <input type="text" name="search" id="prod"
-            placeholder="Como posso ajudar?" (keypress)="updateFilter($event)">
+            placeholder="Como posso ajudar?" (keypress)="updateFilter()">
         </div>
     </div>
     <div class="lista">
         <div class="sizeColuna" *ngFor="let produto of todosProdutos">
             <div class="close">
-                <button class="imgClose" (click)="excluirCard()" class="closeBtn">
-                    <!-- <p class="imgClose">x</p> -->
-                </button>
+                <button class="imgClose" (click)="excluirCard()" class="closeBtn"></button>
             </div>
             <div class="borda">
                     <div>

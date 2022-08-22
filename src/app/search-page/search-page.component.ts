@@ -8,18 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPageComponent implements OnInit {
 
-  produtos:any = [];
+  produto = [
+    {type: 1, title: 'Paisagem'},
+    {type: 2, title: 'Flor'},
+    {type: 3, title: 'Pizza'},
+  ];
+
   todosProdutos: any = [];
 
   private list_produtos_url = 'http://aai-frontend-interview-mock-data.s3-website-sa-east-1.amazonaws.com/cardlist.json';
 
-  listProd = [ 
-    {id: 'Type 1', title: 'Paisagem'},
-    {id: 'Type 2', title: 'Flor'},
-    {id: 'Type 3', title: 'Pizza'}
-  ]
-
-  constructor(public http : HttpClient) { }
+  constructor(public http : HttpClient) {
+    
+  }
 
   ngOnInit(): void {
     this.getProdutos()
@@ -29,18 +30,10 @@ export class SearchPageComponent implements OnInit {
     this.http.get(this.list_produtos_url).subscribe((produtos:any)=>{
       this.todosProdutos = produtos
     })
-    
   }
   
+  updateFilter() {}
 
-  updateFilter(event: any) {
-    this.produtos = this.todosProdutos.filter((p: { produtos: any; }) => p.produtos === val)
-    let val = event.target.value.toLowerCase();
-    this.produtos = this.listProd;
-  }
-
-  excluirCard() { 
-
-  }
+  excluirCard() {}
 
 }
