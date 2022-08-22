@@ -30,12 +30,27 @@ body {
 }
 
 .closeBtn {
-    box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+    background-image: url(http://aai-frontend-interview-mock-data.s3-website-sa-east-1.amazonaws.com/assets/close.svg);
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.2);
     border: solid 1px lightgray;
     border-radius: 60px;
     width: 30px;
     height: 30px;
     margin: 10px;
+}
+
+.closeBtn:active { 
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.5);
+    border: solid 1px lightgrey;
+    transform: rotate(45deg);
+}
+
+.imgClose { 
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: bolder;
+    vertical-align: middle;
+    font-size: 0.8vw;
 }
 
 .title { 
@@ -51,7 +66,8 @@ body {
 .coluna { 
     display: flex;
     flex-direction: column;
-    padding: 5px;
+    padding: 8px;
+    height: 300px;
 }
 
 .padd {
@@ -66,17 +82,21 @@ body {
     -o-object-fit: cover;
     -o-object-position: center;
     width: 100%;
-    height: 200px;
+    height: 180px;
 }
 
 .descricao {
     text-align: justify;
-    font-size: 0.8vw;
+    font-size: 0.7vw;
 }
 
 .sizeColuna { 
     width: 80%;
     position: relative;
+}
+
+.sizeColuna:hover {
+    top:-10px;
 }
 
 .search {
@@ -99,7 +119,7 @@ input[type=text] {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
-  }
+}
 
 input[type=text]:focus {
   border: 1px solid rgb(72, 72, 238);

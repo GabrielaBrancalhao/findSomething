@@ -10,15 +10,15 @@
 <body>
     <div class="search">
         <div>
-            <input type="text" name="search" 
-            placeholder="Como posso ajudar?">
+            <input type="text" name="search" id="prod"
+            placeholder="Como posso ajudar?" (keypress)="updateFilter($event)">
         </div>
     </div>
     <div class="lista">
-        <div class="sizeColuna" *ngFor="let produto of produtos">
+        <div class="sizeColuna" *ngFor="let produto of todosProdutos">
             <div class="close">
-                <button  class="closeBtn">
-                    <img src="http://aai-frontend-interview-mock-data.s3-website-sa-east-1.amazonaws.com/assets/close.svg">
+                <button class="imgClose" (click)="excluirCard()" class="closeBtn">
+                    <!-- <p class="imgClose">x</p> -->
                 </button>
             </div>
             <div class="borda">
