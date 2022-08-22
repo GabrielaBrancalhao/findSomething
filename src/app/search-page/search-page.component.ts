@@ -7,14 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-page.component.css']
 })
 export class SearchPageComponent implements OnInit {
-
+  
   produto = [
     {type: 1, title: 'Paisagem'},
     {type: 2, title: 'Flor'},
     {type: 3, title: 'Pizza'},
   ];
 
-  todosProdutos: any = [];
+  todosProdutos: any;
 
   private list_produtos_url = 'http://aai-frontend-interview-mock-data.s3-website-sa-east-1.amazonaws.com/cardlist.json';
 
@@ -24,6 +24,7 @@ export class SearchPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProdutos()
+    this.updateFilter(this.todosProdutos)
   }
 
   getProdutos() {
@@ -31,8 +32,15 @@ export class SearchPageComponent implements OnInit {
       this.todosProdutos = produtos
     })
   }
-  
-  updateFilter() {}
+
+  updateFilter(event) {
+    const val = event.target.value.toLowerCase();
+
+      if(!val) this.produto = this.todosProdutos
+      else
+      this.todosProdutos = this.produto.filter(a =>
+            a.title.toUpperCase().indexOf(val))
+  }
 
   excluirCard() {}
 
