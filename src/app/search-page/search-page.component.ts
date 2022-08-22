@@ -18,11 +18,6 @@ export class SearchPageComponent implements OnInit {
     this.getProdutos()
   }
 
-  listarTodosProdutos() {
-    this.http.get(`${ this.list_produtos_url}`)
-             .subscribe(resultado => console.log(resultado));
-  }
-
   getProdutos() {
     this.http.get(this.list_produtos_url).subscribe((produtos:any)=>{
       this.produtos = produtos;
